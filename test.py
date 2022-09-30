@@ -24,7 +24,7 @@ while True:
         print("Motion...")
         # camera warm-up time
         time.sleep(2)
-        P.capture('movement.jpg')
+        P.capture('movement.jpg', use_video_port=True)
         time.sleep(10)
         subject = 'Security allert!!'
         msg = MIMEMultipart()
