@@ -42,6 +42,6 @@ while True:
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login('tnidge03@gmail.com', 'poksix-jantif-8Tezbo')
-        server.sendmail('tnidge03@gmail.com', 'poksix-jantif-8Tezbo', msg)
+        server.login('tnidge03@gmail.com', 'fqhbrikxryrbadnl')
+        server.sendmail('tnidge03@gmail.com', 'fqhbrikxryrbadnl', msg)
         server.quit()
