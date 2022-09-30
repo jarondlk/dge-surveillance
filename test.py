@@ -39,9 +39,7 @@ while True:
         msg.attach(img)
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.ehlo()
         server.starttls()
-        server.ehlo()
         server.login('tnidge03@gmail.com', 'poksix-jantif-8Tezbo')
-        server.send_message(msg)
+        server.sendmail('tnidge03@gmail.com', 'poksix-jantif-8Tezbo', msg)
         server.quit()
