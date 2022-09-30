@@ -1,6 +1,6 @@
 // For DGE03 laboratory surviellance project
 
-import PiCamera from 'pi-camera';
+const PiCamera = require('pi-camera');
 
 const myCameraPhoto = new PiCamera({
     mode: 'photo',
@@ -19,7 +19,7 @@ const myCameraVideo = new PiCamera({
 
 var camerInUse = false;
 
-export function takePicture (callback) {
+module.exports.takePicture = function (callback) {
     if (camerInUse == false) {
         camerInUse = true;
         myCameraPhoto.snap()
@@ -37,7 +37,7 @@ export function takePicture (callback) {
     }
 }
 
-export function takeVideo (callback) {
+module.exports.takeVideo = function (callback) {
     if (camerInUse == false) {
         camerInUse = true;
         myCameraVideo.record()

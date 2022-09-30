@@ -1,8 +1,8 @@
 //sensor module code
 
-import { Gpio as GPIO } from 'pigpio';
-import { takePicture, takeVideo } from './CameraModule';
-import { sendMailPhoto, sendMailVideo } from './EmailModule'; //email module file
+var GPIO = require('pigpio').Gpio, //pigpio download
+    cameraModule = require('./CameraModule'), //camremodule file
+    emailModule = require('./EmailModule'); //email module file
 
 var PIR_out = new GPIO(19, { mode: GPIO.INPUT, alert: true }),
     red_LED = new GPIO(17, { mode: GPIO.OUTPUT }),
@@ -18,10 +18,10 @@ red_LED.digitalWrite(0);
 
 PIR_out.on('alert', function (level, tick) {
     if (level == 1) {
-        takePicture(function (callback) {
+        cameraModule.takePicture(function (callback) {
             var result = callback;
             if (result == 'success') {
-                sendMailPhoto()
+                emailModule.sendMailPhoto()
             }
         })
         console.log('PIR : Intruder Alert..!!')
@@ -39,10 +39,10 @@ PIR_out.on('alert', function (level, tick) {
 
 IR_out.on('alert', function (level, tick) {
     if (level == 1) {
-        takeVideo(function (callback) {
+        cameraModule.takeVideo(function (callback) {
             var result = callback;
             if (result == 'success') {
-                sendMailVideo();
+                emailModule.sendMailVideo();
             }
         })
         console.log('IR : Intruder Alert..!!')
@@ -78,10 +78,10 @@ echo.on('alert', function (level, tick) {
             console.log('Ultrasonic : Intruder Detected...!!');
             red_LED.digitalWrite(1);
             buzzer.digitalWrite(level);
-            takePicture(function (callback) {
+            cameraModule.takePicture(function (callback) {
                 var result = callback;
                 if (result == 'success') {
-                    sendMailPhoto();
+                    emailModule.sendMailPhoto();
                 }
             })
         }
