@@ -37,7 +37,7 @@ while True:
         fp.close()
         msg.attach(img)
 
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP('smtp.gmail.com', 993)
         server.starttls()
         server.login(user='tnidge03@gmail.com',
                      password='poksix-jantif-8Tezbo')
