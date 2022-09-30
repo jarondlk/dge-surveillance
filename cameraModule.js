@@ -1,3 +1,5 @@
+// For DGE03 laboratory surviellance project
+
 const PiCamera = require('pi-camera');
 
 const myCameraPhoto = new PiCamera({
