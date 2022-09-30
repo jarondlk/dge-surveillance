@@ -20,7 +20,8 @@ P.start_preview()
 
 GPIO.setup(23, GPIO.IN)
 while True:
-    if GPIO.input(23):
+    # if GPIO.input(23):
+    if (True):
         print("Motion...")
         # camera warm-up time
         time.sleep(2)
