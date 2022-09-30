@@ -1,7 +1,7 @@
 //don't forgor this -->"npm install nodemailer"
-var nodemailer = require('nodemailer');
+import { createTransport } from 'nodemailer';
 
-var transporter = nodemailer.createTransport({
+var transporter = createTransport({
     service: 'gmail',
     auth: {
         user: 'Suscurity_DGE03',
@@ -20,7 +20,7 @@ const photoMailOptions = {
     }]
 };
 
-module.exports.sendMailPhoto = function () {
+export function sendMailPhoto () {
     transporter.sendMail(photoMailOptions, function (err, info) {
         if (err) {
             console.log(err.toString())
@@ -42,7 +42,7 @@ const videoMailOptions = {
     }]
 };
 
-module.exports.sendMailVideo = function () {
+export function sendMailVideo () {
     transporter.sendMail(videoMailOptions, function (err, info) {
         if (err) {
             console.log(err.toString());
