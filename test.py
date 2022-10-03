@@ -32,6 +32,7 @@ while True:
         msg['Subject'] = subject
         msg['From'] = me
         msg['To'] = toaddr
+
         fp = open('movement.jpg', 'rb')
         img = MIMEImage(fp.read())
         fp.close()
