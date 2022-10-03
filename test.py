@@ -26,7 +26,7 @@ while True:
             # camera warm-up time
             time.sleep(2)
             P.capture('movement.jpg', use_video_port=True)
-            time.sleep(5)
+            time.sleep(2)
             subject = 'Security allert!!'
             msg = MIMEMultipart()
             msg['Subject'] = subject
