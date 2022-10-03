@@ -255,7 +255,7 @@ def main():
 
     GPIO.setup(23, GPIO.IN)
     while True:
-        if GPIO.input(23):
+        if GPIO.input(17):
             if (True):
 
                 print("Motion...")
