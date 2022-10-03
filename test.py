@@ -10,7 +10,7 @@ import time
 
 toaddr = 'tnidge03@gmail.com'
 me = 'tnidge03@gmail.com'
-Subject = 'security alert'
+Subject = 'Security alert'
 
 GPIO.setmode(GPIO.BCM)
 
@@ -43,5 +43,6 @@ while True:
         server.starttls()
         server.ehlo()
         server.login('tnidge03@gmail.com', 'fqhbrikxryrbadnl')
-        server.sendmail('tnidge03@gmail.com', 'tnidge03@gmail.com', "msg")
+        server.sendmail('tnidge03@gmail.com',
+                        'tnidge03@gmail.com', msg.as_string())
         server.quit()
