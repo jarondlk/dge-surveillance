@@ -253,7 +253,7 @@ def main():
     P.resolution = (1024, 768)
     P.start_preview()
 
-    GPIO.setup(23, GPIO.IN)
+    GPIO.setup(17, GPIO.IN)
     while True:
         if GPIO.input(17):
             if (True):
