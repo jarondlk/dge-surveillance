@@ -14,14 +14,16 @@ Subject = 'Security alert'
 
 GPIO.setmode(GPIO.BCM)
 
-P = PiCamera()
-P.resolution = (1024, 768)
-P.start_preview()
 
 GPIO.setup(23, GPIO.IN)
 while True:
     # if GPIO.input(23):
     if (True):
+
+        P = PiCamera()
+        P.resolution = (1024, 768)
+        P.start_preview()
+
         print("Motion...")
         # camera warm-up time
         time.sleep(2)
@@ -36,6 +38,8 @@ while True:
         img = MIMEImage(fp.read())
         fp.close()
         msg.attach(img)
+
+        P.close()
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
