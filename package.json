@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "nodemailer": "^6.8.0",
-    "pi-camera": "^1.7.0",
-    "pigpio": "^3.3.1"
-  }
-}
